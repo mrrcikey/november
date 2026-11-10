@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>seth</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: "Times New Roman", serif;
+}
+
+body{
+background:#ffffff;
+color:#222;
+}
+
+/* topo */
+.header{
+width:100%;
+height:220px;
+background:url("https://i.pinimg.com/1200x/ab/67/7e/ab677eeadb1f3b5d09ac2e9751a8dcd9.jpg") center/cover no-repeat;
+filter:grayscale(100%);
+}
+
+/* container geral */
+.container{
+max-width:1100px;
+margin:auto;
+padding:30px 20px;
+}
+
+/* titulo */
+.title{
+text-align:center;
+margin-bottom:30px;
+}
+
+.title h1{
+font-size:60px;
+font-weight:300;
+font-style:italic;
+}
+
+.title span{
+display:block;
+letter-spacing:4px;
+font-size:18px;
+margin-top:5px;
+}
+
+.subtitle{
+font-style:italic;
+margin-top:10px;
+}
+
+/* layout principal */
+.content{
+display:grid;
+grid-template-columns:2fr 1fr;
+gap:40px;
+align-items:start;
+}
+
+/* texto */
+.text p{
+margin-bottom:10px;
+line-height:1.6;
+font-size:15px;
+}
+
+/* imagem lateral */
+.side-image{
+background:white;
+padding:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.15);
+}
+
+.side-image img{
+width:100%;
+display:block;
+filter:grayscale(100%);
+}
+
+.caption{
+font-size:12px;
+margin-top:8px;
+text-align:center;
+}
+
+/* -------- SEÇÃO MY LOVE -------- */
+
+.love-section{
+display:grid;
+grid-template-columns:1fr 1fr;
+min-height:100vh;
+background:#ffffff;
+margin-top:80px;
+}
+
+.love-image{
+background:url("https://i.pinimg.com/736x/53/28/75/532875c6b73be527b799589a53be9d62.jpg") center/cover no-repeat;
+filter:grayscale(100%);
+}
+
+.love-text{
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:60px;
+text-align:center;
+}
+
+.love-text h1{
+font-size:70px;
+font-weight:300;
+}
+
+.love-sub{
+letter-spacing:3px;
+margin:10px 0 30px 0;
+font-size:14px;
+}
+
+.poem{
+max-width:350px;
+line-height:1.8;
+font-size:14px;
+color:#444;
+}
+
+.poem p{
+margin-bottom:8px;
+}
+
+/* tradução */
+.frase{
+margin-bottom:15px;
+}
+
+.traducao{
+display:none;
+color:#777;
+font-style:italic;
+margin-top:5px;
+}
+
+.frase button{
+margin-top:5px;
+background:none;
+border:1px solid #aaa;
+padding:3px 8px;
+font-size:12px;
+cursor:pointer;
+}
+
+/* linha animada */
+.heart-line{
+margin-top:20px;
+display:flex;
+justify-content:center;
+}
+
+.heart-line svg{
+width:300px;
+}
+
+#line{
+fill:none;
+stroke:#000;
+stroke-width:1.5;
+stroke-dasharray:1;
+stroke-dashoffset:1;
+animation:dash 3s linear infinite;
+}
+
+#point{
+fill:none;
+stroke:#000;
+stroke-width:5;
+stroke-linecap:round;
+stroke-dasharray:.0001, .9999;
+stroke-dashoffset:1;
+animation:dash 3s linear infinite;
+}
+
+@keyframes dash{
+0%{stroke-dashoffset:1;}
+80%{stroke-dashoffset:0;}
+100%{stroke-dashoffset:0;}
+}
+
+/* -------- SEÇÃO FINAL -------- */
+
+.final-section{
+background:#ffffff;
+padding:40px 20px;
+text-align:center;
+}
+
+.top-images img{
+width:100%;
+max-width:600px;
+filter:grayscale(100%);
+margin-bottom:15px;
+}
+
+.small-text{
+font-size:13px;
+margin-bottom:15px;
+}
+
+.letter{
+max-width:700px;
+margin:20px auto 0;
+font-size:14px;
+line-height:1.6;
+}
+
+/* dias */
+.days{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:30px;
+margin:20px 0;
+}
+
+.days img{
+width:160px;
+filter:grayscale(100%);
+}
+
+/* -------- RESPONSIVO -------- */
+
+@media (max-width:768px){
+
+  .heart-img img{
+width:100%;
+height:140px;
+}
+
+    .album{
+min-height:auto;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+}
+
+.photo{
+position:static;
+transform:none;
+width:120px;
+}
+
+.title h1{
+font-size:40px;
+}
+
+.content{
+grid-template-columns:1fr;
+}
+
+.side-image{
+max-width:250px;
+margin:auto;
+}
+
+.love-section{
+grid-template-columns:1fr;
+}
+
+.love-image{
+height:400px;
+}
+
+.love-text{
+padding:30px 20px;
+}
+
+.love-text h1{
+font-size:45px;
+}
+
+.final-section{
+padding:30px 15px;
+}
+
+.days{
+gap:15px;
+flex-wrap:wrap;
+}
+
+.days img{
+width:90px;
+}
+
+}
+
+.heart-line{
+margin-top:20px;
+display:flex;
+justify-content:center;
+}
+
+.heart-line svg{
+width:300px;
+}
+
+/* animação */
+#line{
+fill:none;
+stroke:#000000;
+stroke-width:1.5;
+stroke-dasharray:1;
+stroke-dashoffset:1;
+animation:dash 3s linear infinite;
+}
+
+#point{
+fill:none;
+stroke:#000000;
+stroke-width:5;
+stroke-linecap:round;
+stroke-dasharray:.0001, .9999;
+stroke-dashoffset:1;
+animation:dash 3s linear infinite;
+filter:url(#blur);
+}
+
+@keyframes dash{
+0%{stroke-dashoffset:1;}
+80%{stroke-dashoffset:0;}
+100%{stroke-dashoffset:0;}
+}
+
+.album{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:30px;
+padding:60px 20px;
+}
+
+/* card */
+.photo{
+width:140px;
+background:#fff;
+padding:10px;
+box-shadow:0 8px 15px rgba(0,0,0,0.15);
+text-align:center;
+transition:0.3s;
+}
+
+/* imagem */
+.photo img{
+width:100%;
+filter:grayscale(100%);
+}
+
+/* legenda */
+.photo p{
+font-size:12px;
+margin-top:5px;
+}
+
+.spotify-player{
+max-width:400px; /* aumenta largura */
+margin:60px auto;
+opacity:0.9;
+}
+
+img{
+max-width:100%;
+height:auto;
+}
+
+.photobook-section{
+padding:60px 20px;
+}
+
+/* CARD GRANDE */
+.main-card{
+border:1px solid #aaa;
+border-radius:30px;
+padding:40px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px;
+margin-bottom:40px;
+}
+
+.heart-img img{
+width:200px;     /* mais largo */
+height:120px;    /* menos altura */
+object-fit:cover;
+border-radius:15px;
+filter:grayscale(100%);
+}
+
+.main-text{
+font-size:18px;
+text-align:right;
+}
+
+/* HEADER */
+.photobook-header{
+display:flex;
+justify-content:space-between;
+font-size:12px;
+margin-bottom:20px;
+}
+
+/* GRID */
+.photobook-grid{
+display:grid;
+grid-template-columns:1fr 1fr 1fr;
+gap:20px;
+}
+
+/* CARDS */
+.photo-card img{
+width:100%;
+border-radius:15px;
+filter:grayscale(100%);
+}
+
+.text-card{
+border:1px solid #aaa;
+border-radius:20px;
+padding:20px;
+font-size:12px;
+text-align:center;
+}
+
+/* TEXTO FINAL */
+.love-line{
+margin-top:40px;
+display:flex;
+justify-content:center;
+gap:15px;
+font-size:22px;
+}
+
+.cursive{
+font-family:cursive;
+}
+
+
+/* RESPONSIVO */
+@media(max-width:768px){
+
+.main-card{
+flex-direction:column;
+text-align:center;
+}
+
+.main-text{
+text-align:center;
+}
+
+.photobook-grid{
+grid-template-columns:1fr;
+}
+
+.love-line{
+font-size:18px;
+}
+
+}
+
+.duo-images{
+margin:80px auto;
+max-width:900px;
+display:flex;
+flex-direction:column;
+gap:60px;
+}
+
+/* estrutura de cada linha */
+.duo-item{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+/* imagens */
+.duo-item img{
+width:300px;
+height:150px;
+object-fit:cover;
+border-radius:15px;
+filter:grayscale(100%);
+}
+
+/* texto */
+.duo-item p{
+max-width:300px;
+font-size:14px;
+line-height:1.6;
+}
+
+/* alinhamentos */
+.duo-item.left{
+justify-content:flex-start;
+}
+
+.duo-item.right{
+justify-content:flex-end;
+flex-direction:row-reverse;
+}
+
+
+/* RESPONSIVO */
+@media(max-width:768px){
+  
+
+.moodboard{
+  height:600px;
+}
+
+.mood-img{
+  width:100px;
+  height:100px;
+}
+
+/* ajusta posições no celular */
+.img1{ left:10%; top:60px; }
+.img2{ left:55%; top:180px; }
+.img3{ left:15%; top:320px; }
+.img4{ left:60%; top:60px; }
+
+.mood-text{
+  font-size:22px;
+}
+
+.duo-item{
+flex-direction:column;
+text-align:center;
+}
+
+.duo-item.right{
+flex-direction:column;
+}
+
+.duo-item img{
+width:100%;
+height:140px;
+}
+
+/* -------- MOODBOARD -------- */
+
+.moodboard{
+  position:relative;
+  height:700px;
+  margin-top:80px;
+  overflow:hidden;
+}
+
+/* fundo */
+.mood-bg{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:url("https://i.pinimg.com/736x/53/28/75/532875c6b73be527b799589a53be9d62.jpg") center/cover no-repeat;
+  opacity:0.15;
+  filter:grayscale(100%);
+}
+
+/* conteúdo */
+.mood-content{
+  position:relative;
+  width:100%;
+  height:100%;
+}
+
+/* imagens */
+.mood-img{
+  position:absolute;
+  width:140px;
+  height:140px;
+  object-fit:cover;
+  box-shadow:0 8px 15px rgba(0,0,0,0.2);
+  filter:grayscale(100%);
+  border-radius:10px;
+}
+
+/* posições */
+.img1{
+  top:80px;
+  left:20%;
+  transform:rotate(-5deg);
+}
+
+.img2{
+  top:200px;
+  left:50%;
+  transform:rotate(6deg);
+}
+
+.img3{
+  top:350px;
+  left:25%;
+  transform:rotate(-3deg);
+}
+
+.img4{
+  top:100px;
+  left:65%;
+  transform:rotate(4deg);
+}
+
+/* texto */
+.mood-text{
+  position:absolute;
+  bottom:40px;
+  width:100%;
+  text-align:center;
+  font-size:28px;
+  font-family:cursive;
+}
+
+/* RESPONSIVO */
+@media(max-width:768px){
+
+  .moodboard{
+    height:600px;
+  }
+
+  .mood-img{
+    width:100px;
+    height:100px;
+  }
+
+  .img1{ left:10%; top:60px; }
+  .img2{ left:55%; top:180px; }
+  .img3{ left:15%; top:320px; }
+  .img4{ left:60%; top:60px; }
+
+  .mood-text{
+    font-size:22px;
+  }
+}
+
+#thread{
+  fill:none;
+  stroke:#c4002f;
+  stroke-width:3;
+
+  stroke-dasharray:10;
+  stroke-dashoffset:0;
+
+  animation:move 2s linear infinite;
+}
+
+/* movimento contínuo */
+@keyframes move{
+  from{
+    stroke-dashoffset:0;
+  }
+  to{
+    stroke-dashoffset:-100;
+  }
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="header"></div>
+
+<div class="container">
+
+<div class="title">
+<h1>MAAATTTTT</h1>
+<div class="subtitle">Eu fiz isso em maio, nunca terminei, mas ele está salvo 08/11/26</div>
+<h3>SETH</h3>
+
+<div class="content">
+
+<div class="text">
+<p>Não fiz nada pra quando fechou 2 anos</p>
+<p>Então fiz algo que eu sei e gosto de fazer pra você</p>
+<p>Eu, realmente, não sei o que por aqui,</p>
+<p>Porque eu já contei tudo o que eu queria</p>
+<p>Mas vou tentar</p>
+<p>Queria poder fazer mais<br>Porque você merece muito mais</p>
+</div>
+
+<div class="spotify-player">
+  <iframe 
+  src="https://open.spotify.com/embed/track/2RkhK84KHN9xy2CLdifFId?utm_source=generator&theme=0"
+  width="100%" 
+  height="120"
+  frameBorder="0">
+  </iframe>
+</div>
+
+<div class="side-image">
+<img src="https://i.pinimg.com/1200x/92/3b/f9/923bf95ba4521ab812c0569e73509adc.jpg">
+<div class="caption">“Heh. You should at least curse me at the end.”</div>
+</div>
+
+</div>
+</div>
+
+<!-- SEÇÃO MY LOVE -->
+ <section class="love-section">
+    <div class="love-image"></div> <div class="love-text">
+        <h1>セス</h1> <div class="love-sub">— 愛してる —</div>
+        <div class="poem"> <div class="frase">
+            <p class="original">Ты никогда не убежишь от звука голоса мужчины, который тебя любил</p> 
+            <p class="traducao">Você nunca vai fugir do som da voz do homem que te amou</p> <button onclick="toggleTraducao(this)">Traduzir</button>
+         </div> <div class="frase"> 
+            <p class="original">Et koskaan pakene sen miehen äänen soundia, joka rakasti sinua</p>
+             <p class="traducao">Você nunca vai fugir do som da voz do homem que te amou</p> 
+             <button onclick="toggleTraducao(this)">Traduzir</button> </div> <div class="frase"> 
+                <p class="original">Du wirst niemals dem Klang der Stimme des Mannes entkommen, der dich geliebt hat</p>
+                 <p class="traducao">Você nunca vai fugir do som da voz do homem que te amou</p>
+                  <button onclick="toggleTraducao(this)">Traduzir</button> </div> </div>
+<div class="love-footer">
+Te amo, más de lo que sé decir
+</div>
+
+<!-- LINHA ANIMADA -->
+<div class="heart-line">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-5 -5 278 56">
+  <filter id="blur">
+    <feGaussianBlur stdDeviation="1.6" />
+  </filter>
+
+  <g transform="translate(29.1 -127.42)">
+    <path id="line" d="M-28.73 167.2c26.43 9.21 68.46-9.46 85.45-12.03 18.45-2.78 32.82 4.86 28.75 9.83-3.82 4.66-25.77-21.18-14.81-31.5 9.54-8.98 17.64 10.64 16.42 17.06-1.51-6.2 2.95-26.6 14.74-22.11 11.7 4.46-4.33 49.03-15.44 44.08-6.97-3.1 15.44-16.26 26.1-16 23.03.56 55.6 27.51 126.63 3.36" pathLength="1"/>
+  </g>
+
+  <g transform="translate(29.1 -127.42)">
+    <path filter="url(#blur)" id="point" d="M-28.73 167.2c26.43 9.21 68.46-9.46 85.45-12.03 18.45-2.78 32.82 4.86 28.75 9.83-3.82 4.66-25.77-21.18-14.81-31.5 9.54-8.98 17.64 10.64 16.42 17.06-1.51-6.2 2.95-26.6 14.74-22.11 11.7 4.46-4.33 49.03-15.44 44.08-6.97-3.1 15.44-16.26 26.1-16 23.03.56 55.6 27.51 126.63 3.36" pathLength="1"/>
+  </g>
+</svg>
+</div>
+
+<div class="top-images">
+<img src="https://i.pinimg.com/736x/c2/04/35/c204358e9e13dfba8b1ff76d4be6f81f.jpg">
+</div>
+
+<div class="final-text">
+<p class="small-text">
+Dos-kun and I exchanged a few words…and yet…the moment I met him…I knew that my life had become something entirely different. It’s just as he said…I had begun fighting in order to lose myself. And now…Look what’s happened. (Nikolai clutches Fyodor’s severed arm) Now all I want…is just…
+</p>
+
+<p class="letter">
+たった一筋 モノクロームの頬に紅差す
+</p>
+</div>
+
+</section>
+
+<script>
+function toggleTraducao(botao){
+const frase = botao.parentElement;
+const traducao = frase.querySelector(".traducao");
+
+traducao.style.display =
+traducao.style.display === "block" ? "none" : "block";
+}
+</script>
+
+
+<!-- ÁLBUM DE FOTOS -->
+
+<section class="album">
+
+  <div class="photo">
+    <img src="https://i.pinimg.com/736x/cf/1c/71/cf1c715e5c9fe3b313d63aa5bbe6f3e2.jpg">
+    <p>"você ilumina meu dia quando eu estou triste" - S (05/07/2025)</p>
+  </div>
+
+  <div class="photo">
+    <img src="https://i.pinimg.com/736x/bc/6f/06/bc6f065b3383f75604e83b7c278b5dcf.jpg">
+    <p>"achei que você tava tentando se enturmar" - S (04/04/2026)</p>
+  </div>
+
+  <div class="photo">
+    <img src="https://i.pinimg.com/1200x/02/26/44/0226441ee2e6aba25927917e5adbc88c.jpg">
+    <p>"a gente sendo o bem e o mal" - S (17/03/2026)</p>
+  </div>
+
+  <div class="photo">
+    <img src="https://i.pinimg.com/736x/ed/47/d9/ed47d9d252946c184c32dd7422a8e522.jpg">
+    <p>"você é muito pra mim" - N (16/03/2026)</p>
+  </div>
+
+  <div class="photo">
+  <img src="https://i.pinimg.com/736x/08/04/be/0804be93bde319f31950f7eb44167703.jpg">
+  <p>"vamos insistir um ao outro, até nós virarmos adultos e continuamos bestas juntos" - S (14/05/2025)</p>
+</div>
+
+<div class="photo">
+  <img src="https://i.pinimg.com/736x/05/c8/89/05c889dde670396d71af27513b28edd4.jpg">
+  <p>"EU TI AMO CARA" (primeiro "eu te amo" 07/04/2024)</p>
+</div>
+
+<div class="photo">
+  <img src="https://i.pinimg.com/736x/4e/bc/81/4ebc810ee584ab23d7717a6635827c8b.jpg">
+  <p>"por que meu áudio ta do seu lado?" - S </p>
+</div>
+
+<div class="photo">
+  <img src="https://i.pinimg.com/736x/d7/f8/fe/d7f8fef20eb8fdd4d020efb17d60421e.jpg">
+  <p>"eu escolheria você" - N/S (06/03/2026)</p>
+</div>
+
+<div class="photo">
+  <img src="https://i.pinimg.com/736x/50/7b/13/507b13ed7448ea220d9d73ff714e9871.jpg">
+  <p>"você é minha alma gêmea" - N (16/03/2025)</p>
+</div>
+
+<div class="photo">
+  <img src="https://i.pinimg.com/736x/db/3a/a2/db3aa267c895fe35eaa0e41320b9160c.jpg">
+  <p>"eu e uma pessoa qualquer nunca estaríamos conectados por um fio vermelho" - S (16/03/20256)</p>
+</div>
+
+<div class="photo">
+  <img src="https://i.pinimg.com/736x/ae/e7/d6/aee7d6068bb0ba1234cc98b83d9699e1.jpg">
+  <p>"você é a minha pessoa favorita" - N (01/01/2026)</p>
+</div>
+
+<div class="photo">
+  <img src="https://i.pinimg.com/736x/3e/46/5f/3e465ff46fb30cb9909172b78d7f8536.jpg">
+  <p>"toda vez que você fala, eu rio" - S (01/01/2026)</p>
+</div>
+
+<audio id="musica" autoplay loop muted>
+  <source src="https://files.catbox.moe/m0310l.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const audio = document.getElementById("musica");
+
+// tenta ativar sozinho
+window.addEventListener("load", () => {
+  audio.play().catch(() => {});
+});
+
+// desbloqueia som na primeira interação (sem botão visível)
+document.addEventListener("click", () => {
+  audio.muted = false;
+  audio.play();
+}, { once: true });
+</script>
+
+
+<section class="photobook-section">
+
+  <!-- CARD GRANDE -->
+  <div class="main-card">
+    <div class="heart-img">
+  <img src="https://64.media.tumblr.com/2c2a5fe468ec98d85d105a9e0cf1e730/tumblr_pk2p5isexB1vgzd4so1_r1_540.gif">
+</div>
+    <div class="main-text">
+      <p>TWO YEARS<br>WITH ◦ MY<br><b>SUNSHINE</b></p>
+    </div>
+  </div>
+
+  <!-- TITULO -->
+  <div class="photobook-header">
+  </div>
+
+  <!-- 3 CARDS -->
+  <div class="photobook-grid">
+
+    <div class="photo-card">
+      <img src="https://i.pinimg.com/736x/f9/11/db/f911db0ba08852cda3bb7a2826cc9bd3.jpg">
+    </div>
+
+    <div class="text-card">
+      <p>
+        Dois anos parece tão pouco. Me apeguei a você mais rápido do que eu pensei.
+        <br><br>
+        Meus dias são mais alegres com você.
+        <br><br>
+        03.10.24
+      </p>
+    </div>
+
+    <div class="photo-card">
+      <img src="https://i.pinimg.com/736x/8d/43/23/8d4323a8cecaf9958e84324d649a6cd7.jpg">
+    </div>
+
+  </div>
+
+  <!-- TEXTO FINAL -->
+  <div class="love-line">
+    <span>Me</span>
+    <span>+</span>
+    <span>You</span>
+    <span>:</span>
+    <span class="cursive">Us</span>
+  </div>
+
+</section>
+
+
+
+</section>
+
+<section class="duo-images">
+
+  <!-- bloco 1 -->
+  <div class="duo-item left">
+    <img src="https://i.pinimg.com/1200x/28/ee/4d/28ee4df324c958f73697817cb55e3f5e.jpg">
+    <p>"texto"</p>
+  </div>
+
+<style>
+body{
+  margin:0;
+  background:#f1f3f4;
+  font-family:Arial, sans-serif;
+}
+
+/* topo estilo google */
+.search-bar{
+  background:white;
+  padding:15px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+.search-bar input{
+  flex:1;
+  border:none;
+  outline:none;
+  font-size:18px;
+}
+
+/* conteúdo */
+.container{
+  padding:20px;
+}
+
+/* texto */
+.result-text{
+  background:white;
+  padding:20px;
+  border-radius:10px;
+  margin-bottom:20px;
+  line-height:1.6;
+}
+
+.moodboard{
+  min-height:200px;
+  height:auto;
+}
+
+.moodboard img{
+  position:absolute;
+  border-radius:8px;
+  object-fit:cover;
+}
+
+/* posições */
+.img1{width:80px;height:80px;top:10px;left:40%;}
+.img2{width:70px;height:70px;top:80px;left:10%;}
+.img3{width:70px;height:70px;top:80px;right:10%;}
+.img4{width:120px;height:120px;top:150px;left:5%;}
+.img5{width:120px;height:120px;top:150px;right:5%;}
+.img6{width:140px;height:140px;top:250px;left:35%;}
+
+</style>
+</head>
+
+<body>
+
+<!-- barra fake -->
+<div class="search-bar">
+  <span style="font-size:20px;"></span>
+  <input value="fio vermelho">
+</div>
+
+<div class="container">
+
+  <!-- texto fake -->
+  <div class="result-text">
+    O fio vermelho, conhecido como Akai Ito (赤い糸) no Japão e China, é uma lenda milenar que simboliza uma conexão invisível e inquebrável entre duas almas gêmeas predestinadas. Diz a tradição que um fio vermelho invisível é amarrado no dedo mindinho (ou tornozelo) de pessoas destinadas a se encontrar, garantindo que se unam, independentemente do tempo, lugar ou circunstâncias.
+  </div>
+
+ 
+
+  <svg width="100%" height="100" viewBox="0 0 500 100">
+  <path id="thread"
+    d="M10 50 
+       C 100 0, 200 100, 300 50 
+       S 450 0, 490 50"
+  />
+</svg>
+</div>
+  
+
+  <!-- colagem -->
+  <div class="moodboard">
+    <img src="https://cdn-images.dzcdn.net/images/cover/e50f1299c9d5eedaad4b4555e95d7c2c/0x1900-000000-80-0-0.jpg" class="img4">
+    <img src="https://upload.wikimedia.org/wikipedia/en/3/32/Join_Me_in_Death.jpg" class="img5">
+    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7c/Silverspringsmac.jpg/250px-Silverspringsmac.jpg" class="img6">
+
+  </div>
+
+</div>
+
+<!-- bloco 2 -->
+  <div class="duo-item right">
+        <p>"eu tentei fazer edit pra você, mas o que eu sei fazer é só letra de música e algumas coisas básicas então não deu muito certo. Então, fiz o que eu sei fazer e que gosto. Até é bom, porque se eu realmente soubesse editar de verdade, meu perfil seria um fã clube inteiro pra você. Eu te amo muito, Seth. Não consigo imaginar uma situação em que eu escolha outra pessoa ao invés de você. Você é único pra mim, independente de quantas discussões a gente tiver, é impossível não amar você."</p>
+
+    <img src="https://i.pinimg.com/originals/90/2a/f5/902af5bb2edf405a95f3c8bc1dbf6154.gif">
+    
+  </div>
+
+</body>
+</html>
+
+</section>
+</body>
+</html>
